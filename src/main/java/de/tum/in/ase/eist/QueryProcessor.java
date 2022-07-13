@@ -24,8 +24,9 @@ public class QueryProcessor {
            return "My name is c3ntur1o";
         }
         else if(query.contains("plus")){
-            String numbers = query.substring(query.indexOf("plus ") + 6);
-            return "" + 42;
+            String number2 = query.substring(query.indexOf("plus ") + 6);
+            String number1 = query.substring(query.indexOf("is") + 3);
+            return "" + (Integer.parseInt(number1) + Integer.parseInt(number2));
         } else if(query.contains("multiplied")){
             //String nubmer2 = query.substring(query.indexOf("multiplied by ") + );
             return "";

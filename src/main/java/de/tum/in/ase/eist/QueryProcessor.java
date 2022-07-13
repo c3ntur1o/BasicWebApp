@@ -28,8 +28,9 @@ public class QueryProcessor {
             String number1 = query.substring(query.indexOf("is") + 3);
             return "" + (Integer.parseInt(number1) + Integer.parseInt(number2));
         } else if(query.contains("multiplied")){
-            //String nubmer2 = query.substring(query.indexOf("multiplied by ") + );
-            return "";
+            String number2 = query.substring(query.indexOf("multiplied by ") + 15);
+            String number1 = query.substring(query.indexOf("is") + 3);
+            return "" + (Integer.parseInt(number1) * Integer.parseInt(number2));
         }
         else { // TODO extend the programm here
             return "";

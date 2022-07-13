@@ -15,7 +15,7 @@ public class QueryProcessor {
                     "writer in the English language and the world's pre-eminent dramatist.";
         } else if (query.contains("number") && query.contains("largest")){
             String numbers = query.substring(query.indexOf(": "));
-            numbers = numbers.substring(query.indexOf(": ") + 3);
+            numbers = numbers.substring(numbers.indexOf(": ") + 3);
             String[] num = numbers.split(", ");
             Object[] res = Arrays.asList(num).stream().map(s -> Integer.parseInt(s)).sorted().toArray();
             return "" + ((Integer)res[res.length - 1]);
@@ -26,12 +26,12 @@ public class QueryProcessor {
         else if(query.contains("plus")){
             String number2 = query.substring(query.indexOf("plus ") + 6);
             String number1 = query.substring(query.indexOf("is") + 3);
-            number1 = number1.substring(0, query.indexOf(" "));
+            number1 = number1.substring(0, number1.indexOf(" "));
             return "" + (Integer.parseInt(number1) + Integer.parseInt(number2));
         } else if(query.contains("multiplied")){
             String number2 = query.substring(query.indexOf("multiplied by ") + 15);
             String number1 = query.substring(query.indexOf("is") + 3);
-            number1 = number1.substring(0, query.indexOf(" "));
+            number1 = number1.substring(0, number1.indexOf(" "));
             return "" + (Integer.parseInt(number1) * Integer.parseInt(number2));
         }
         else { // TODO extend the programm here

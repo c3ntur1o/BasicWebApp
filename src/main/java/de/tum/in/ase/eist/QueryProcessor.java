@@ -14,7 +14,7 @@ public class QueryProcessor {
                     "English poet, playwright, and actor, widely regarded as the greatest " +
                     "writer in the English language and the world's pre-eminent dramatist.";
         } else if (query.contains("number") && query.contains("largest")){
-            String numbers = query.substring("which of the following numbers is the largest: ".length());
+            String numbers = query.substring(query.indexOf(": ") + 2);
             String[] num = numbers.split(", ");
             Object[] res = Arrays.asList(num).stream().map(s -> Integer.parseInt(s)).sorted().toArray();
             return "" + ((Integer)res[res.length - 1]);

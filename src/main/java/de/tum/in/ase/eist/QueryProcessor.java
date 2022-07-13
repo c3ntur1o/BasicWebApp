@@ -26,10 +26,12 @@ public class QueryProcessor {
         else if(query.contains("plus")){
             String number2 = query.substring(query.indexOf("plus ") + 6);
             String number1 = query.substring(query.indexOf("is") + 3);
+            number1 = number1.substring(0, query.indexOf(" "));
             return "" + (Integer.parseInt(number1) + Integer.parseInt(number2));
         } else if(query.contains("multiplied")){
             String number2 = query.substring(query.indexOf("multiplied by ") + 15);
             String number1 = query.substring(query.indexOf("is") + 3);
+            number1 = number1.substring(0, query.indexOf(" "));
             return "" + (Integer.parseInt(number1) * Integer.parseInt(number2));
         }
         else { // TODO extend the programm here
